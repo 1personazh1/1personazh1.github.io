@@ -7,10 +7,6 @@ image: "tuning-basics.jpg"
 draft: false
 ---
 
-# Основы тюнинга JDM автомобилей
-
-![JDM Tuning](/images/tuning-basics.jpg "Тюнинг JDM автомобилей")
-
 Тюнинг JDM автомобилей — это искусство баланса между мощностью, надежностью и стилем.
 
 ## С чего начать?
@@ -35,7 +31,7 @@ draft: false
 - **Cat-back exhaust** — выхлопная система после катализатора
 - **Header/Exhaust manifold** — выпускной коллектор
 
-{{< youtube EaRzb_Dk9eM >}}
+{{< youtube uGFZhVHaOeg >}}
 
 #### Интеркулер
 Увеличенный интеркулер охлаждает наддувочный воздух:

@@ -7,15 +7,11 @@ image: "best-jdm-engines.jpg"
 draft: false
 ---
 
-# Топ-5 легендарных JDM двигателей
-
-![JDM Engines](/images/best-jdm-engines.jpg "Легендарные JDM двигатели")
-
 Японские инженеры создали некоторые из лучших двигателей в истории автопрома. Вот топ-5 легенд.
 
 ## 1. Toyota 2JZ-GTE
 
-![2JZ-GTE](/images/best-jdm-engines.jpg "Toyota 2JZ-GTE двигатель")
+![2JZ-GTE](/images/engine-2jz.jpg "Toyota 2JZ-GTE двигатель")
 
 **Годы выпуска:** 1991-2002
 **Автомобили:** Supra MK4, Aristo, Soarer
@@ -37,11 +33,11 @@ draft: false
 | Single turbo kit | 500-700 л.с. | $3000-5000 |
 | Built motor + big turbo | 800-1000+ л.с. | $10000+ |
 
-{{< youtube EaRzb_Dk9eM >}}
+{{< youtube lXsLzRcQU3w >}}
 
 ## 2. Nissan RB26DETT
 
-![RB26DETT](/images/best-jdm-engines.jpg "Nissan RB26DETT двигатель Skyline GT-R")
+![RB26DETT](/images/engine-rb26.jpg "Nissan RB26DETT двигатель Skyline GT-R")
 
 **Годы выпуска:** 1989-2002
 **Автомобили:** Skyline GT-R (R32, R33, R34), Stagea
@@ -63,7 +59,7 @@ draft: false
 
 ## 3. Honda K20/K24
 
-![K20](/images/best-jdm-engines.jpg "Honda K20 Type R двигатель")
+![K20](/images/engine-k20.jpg "Honda K20 VTEC двигатель")
 
 **Годы выпуска:** 2001-настоящее время
 **Автомобили:** Civic Type R, Integra Type R, Accord, CR-Z
@@ -86,7 +82,7 @@ draft: false
 
 ## 4. Mazda 13B-REW
 
-![13B-REW](/images/best-jdm-engines.jpg "Mazda 13B-REW роторный двигатель")
+![13B-REW](/images/engine-13b.jpg "Mazda 13B-REW роторный двигатель")
 
 **Годы выпуска:** 1992-2002
 **Автомобили:** RX-7 FD
@@ -108,7 +104,7 @@ draft: false
 
 ## 5. Subaru EJ20/EJ25
 
-![EJ25](/images/best-jdm-engines.jpg "Subaru EJ25 BOXER двигатель")
+![EJ25](/images/engine-ej25.jpg "Subaru EJ25 BOXER двигатель")
 
 **Годы выпуска:** 1989-2021
 **Автомобили:** Impreza WRX STI, Legacy, Forester

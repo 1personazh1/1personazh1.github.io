@@ -7,10 +7,6 @@ image: "jdm-history.jpg"
 draft: false
 ---
 
-# История JDM: От Японии до мирового феномена
-
-![JDM Culture](/images/jdm-history.jpg "Японская автомобильная культура")
-
 JDM (Japanese Domestic Market) — это не просто аббревиатура, это целая **культура**, которая захватила мир.
 
 ## Что такое JDM?
