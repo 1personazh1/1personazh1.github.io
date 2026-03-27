@@ -39,7 +39,7 @@ draft: false
 | Single turbo kit | 500-700 л.с. | $3000-5000 |
 | Built motor + big turbo | 800-1000+ л.с. | $10000+ |
 
-{{< youtube 1j9HRxPNYMM >}}
+{{< youtube EaRzb_Dk9eM >}}
 
 ## 2. Nissan RB26DETT
 
