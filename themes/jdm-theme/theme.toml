@@ -3,11 +3,11 @@
 
 name = "JDM Theme"
 license = "MIT"
-licenselink = "https://github.com/yourusername/jdm-theme/blob/main/LICENSE"
-description = "Тема для блога о японской автомобильной культуре (JDM)"
-homepage = "https://github.com/yourusername/jdm-theme"
-tags = ["jdm", "cars", "automotive", "retro", "dark", "responsive"]
-features = ["blog", "responsive", "seo", "social-sharing", "custom-themes"]
+licenselink = "https://github.com/1personazh1/1personazh1.github.io/blob/main/LICENSE"
+description = "Современная тема для блога о японской автомобильной культуре (JDM) в стиле Retro-Futuristic"
+homepage = "https://github.com/1personazh1/1personazh1.github.io"
+tags = ["jdm", "cars", "automotive", "retro", "dark", "responsive", "blog"]
+features = ["blog", "responsive", "seo", "social-sharing", "custom-themes", "animations"]
 min_version = "0.120.0"
 
 [author]
