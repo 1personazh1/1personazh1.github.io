@@ -14,15 +14,20 @@
     <div class="posts-grid">
         {{ range $related }}
         <div class="post-card fade-in">
-            <a href="{{ .Permalink }}">
-                {{ if .Params.image }}
-                <img src="{{ "/images/" | relURL }}{{ .Params.image }}" alt="{{ .Title }}" class="post-image">
-                {{ else }}
-                <div class="post-image" style="background-color: #333; display: flex; align-items: center; justify-content: center;">
-                    <span>Изображение</span>
+            <div class="post-image-wrapper">
+                <a href="{{ .Permalink }}">
+                    {{ if .Params.image }}
+                    <img src="{{ "/images/" | relURL }}{{ .Params.image }}" alt="{{ .Title }}" class="post-image" loading="lazy">
+                    {{ else }}
+                    <div class="post-placeholder">JDM</div>
+                    {{ end }}
+                </a>
+                <div class="post-overlay">
+                    {{ with .Params.categories }}
+                    <span class="post-category-overlay">{{ index . 0 }}</span>
+                    {{ end }}
                 </div>
-                {{ end }}
-            </a>
+            </div>
             <div class="post-content">
                 <h3 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
                 <div class="post-meta">

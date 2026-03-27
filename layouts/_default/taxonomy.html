@@ -7,27 +7,47 @@
     {{ partial "header.html" . }}
 
     <main class="container">
-        <h1 class="fade-in">{{ .Title }}</h1>
-        <p class="taxonomy-description fade-in">Статьи, отмеченные как {{ .Title }}</p>
+        <div class="taxonomy-header fade-in">
+            {{ if eq .Data.Singular "category" }}
+            <span class="taxonomy-badge">Категория</span>
+            {{ else }}
+            <span class="taxonomy-badge">Тег</span>
+            {{ end }}
+            <h1>{{ .Title }}</h1>
+            <p class="taxonomy-description">Статьи по теме «{{ .Title }}» — {{ len .Pages }} {{ if eq (len .Pages) 1 }}статья{{ else if and (gt (len .Pages) 1) (lt (len .Pages) 5) }}статьи{{ else }}статей{{ end }}</p>
+        </div>
 
         <div class="posts-grid">
             {{ range .Pages }}
             <div class="post-card fade-in">
-                <a href="{{ .Permalink }}">
-                    {{ if .Params.image }}
-                    <img src="{{ "/images/" | relURL }}{{ .Params.image }}" alt="{{ .Title }}" class="post-image">
-                    {{ else }}
-                    <div class="post-image" style="background-color: #333; display: flex; align-items: center; justify-content: center;">
-                        <span>Изображение</span>
+                <div class="post-image-wrapper">
+                    <a href="{{ .Permalink }}">
+                        {{ if .Params.image }}
+                        <img src="{{ "/images/" | relURL }}{{ .Params.image }}" alt="{{ .Title }}" class="post-image" loading="lazy">
+                        {{ else }}
+                        <div class="post-placeholder">JDM</div>
+                        {{ end }}
+                    </a>
+                    <div class="post-overlay">
+                        {{ with .Params.categories }}
+                        <span class="post-category-overlay">{{ index . 0 }}</span>
+                        {{ end }}
                     </div>
-                    {{ end }}
-                </a>
+                </div>
                 <div class="post-content">
-                    <h3 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
                     <div class="post-meta">
                         <span class="post-date">{{ .Date.Format "02.01.2006" }}</span>
+                        {{ with .Params.categories }}
+                        <span class="post-category">{{ index . 0 }}</span>
+                        {{ end }}
                     </div>
-                    <p class="post-excerpt">{{ .Summary | plainify | truncate 120 }}</p>
+                    <h3 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    <p class="post-excerpt">{{ .Summary | plainify | truncate 150 }}</p>
+                    <div class="post-tags">
+                        {{ range first 3 .Params.tags }}
+                        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="tag">#{{ . }}</a>
+                        {{ end }}
+                    </div>
                 </div>
             </div>
             {{ end }}

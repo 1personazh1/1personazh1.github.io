@@ -9,9 +9,7 @@ draft: false
 
 # История JDM: От Японии до мирового феномена
 
-{{< social-share >}}
-
-![JDM Culture](jdm-history.jpg "Японская автомобильная культура")
+![JDM Culture](/images/jdm-history.jpg "Японская автомобильная культура")
 
 JDM (Japanese Domestic Market) — это не просто аббревиатура, это целая **культура**, которая захватила мир.
 
@@ -71,8 +69,6 @@ JDM (Japanese Domestic Market) — это не просто аббревиату
 - **Тюнинг**: HKS, GReddy, APR Performance
 - **Встречи**: JDM Expo, Wekfest, StanceNation
 - **Медиа**: YouTube каналы, журналы, игры (Gran Turismo, Need for Speed)
-
-{{< social-share >}}
 
 > «JDM — это не про страну происхождения. Это про философию: надежность, инновации и драйв.»
 

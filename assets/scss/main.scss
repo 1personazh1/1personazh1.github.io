@@ -1347,6 +1347,227 @@ h3 {
   }
 }
 
+// ============================================
+// VIDEO / YOUTUBE
+// ============================================
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; // 16:9
+  margin: 2rem 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 51, 102, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  background: $jdm-darker;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 16px;
+    pointer-events: none;
+    z-index: 1;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
+  }
+}
+
+// ============================================
+// TERMS PAGE (Tags / Categories list)
+// ============================================
+.terms-header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  .terms-description {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.terms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.term-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(145deg, $jdm-gray 0%, $jdm-darker 100%);
+  border: 1px solid rgba(255, 51, 102, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gradient-main);
+    opacity: 0;
+    transition: var(--transition-smooth);
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 51, 102, 0.4);
+    box-shadow: 0 10px 30px rgba(255, 51, 102, 0.15);
+
+    &::before {
+      opacity: 1;
+    }
+
+    .term-name {
+      color: $jdm-accent;
+    }
+
+    .term-count {
+      background: $jdm-accent;
+      color: $jdm-light;
+    }
+  }
+
+  .term-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $jdm-light;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition-smooth);
+  }
+
+  .term-count {
+    background: rgba(255, 51, 102, 0.15);
+    color: $jdm-accent;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+  }
+}
+
+// Taxonomy page (single tag/category)
+.taxonomy-header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  .taxonomy-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: rgba(255, 51, 102, 0.1);
+    border: 1px solid rgba(255, 51, 102, 0.3);
+    border-radius: 50px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: $jdm-accent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  .taxonomy-description {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+// Placeholder image for posts without image
+.post-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, $jdm-gray 0%, $jdm-darker 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+// ============================================
+// 404 PAGE
+// ============================================
+.error-page {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+
+  .error-code {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(6rem, 15vw, 12rem);
+    font-weight: 900;
+    background: var(--gradient-main);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .error-message {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  .error-description {
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+  }
+}
+
 // Selection
 ::selection {
   background: rgba(255, 51, 102, 0.3);

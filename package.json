@@ -15,5 +15,8 @@
   "license": "MIT",
   "dependencies": {
     "playwright": "^1.58.2"
+  },
+  "devDependencies": {
+    "hugo-extended": "^0.158.0"
   }
 }

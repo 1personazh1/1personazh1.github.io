@@ -4,78 +4,29 @@
     {{ partial "head.html" . }}
 </head>
 <body>
-    <header class="navbar">
-        <div class="container nav-container">
-            <a href="/" class="logo">JDM CULTURE</a>
-            <ul class="nav-menu">
-                <li><a href="/">Главная</a></li>
-                <li><a href="/posts">Статьи</a></li>
-                <li><a href="/categories">Категории</a></li>
-                <li><a href="/tags">Теги</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </header>
+    {{ partial "header.html" . }}
 
     <main class="container">
-        <h1>{{ .Title }}</h1>
+        <div class="terms-header fade-in">
+            <h1>{{ .Title }}</h1>
+            {{ if eq .Data.Plural "categories" }}
+            <p class="terms-description">Исследуйте статьи по категориям японской автомобильной культуры</p>
+            {{ else }}
+            <p class="terms-description">Все теги блога — найдите интересующие темы</p>
+            {{ end }}
+        </div>
         
-        <div class="terms-list">
-            {{ $data := .Data }}
-            <ul>
-                {{ range $key, $value := .Data.Terms.Alphabetical }}
-                <li>
-                    <a href="{{ "/" | relLangURL }}{{ $data.Plural }}/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
-                    <span class="count">({{ $value.Count }})</span>
-                </li>
-                {{ end }}
-            </ul>
+        {{ $data := .Data }}
+        <div class="terms-grid">
+            {{ range $key, $value := .Data.Terms.Alphabetical }}
+            <a href="{{ "/" | relLangURL }}{{ $data.Plural }}/{{ $value.Name | urlize }}/" class="term-card fade-in">
+                <span class="term-name">{{ $value.Name }}</span>
+                <span class="term-count">{{ $value.Count }}</span>
+            </a>
+            {{ end }}
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="social-icons">
-                <a href="#" aria-label="Instagram">IG</a>
-                <a href="#" aria-label="YouTube">YT</a>
-                <a href="#" aria-label="TikTok">TT</a>
-            </div>
-            
-            <div class="subscription">
-                <h3>Подпишитесь на обновления</h3>
-                <form class="subscription-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                    <input type="email" name="email" placeholder="Ваш email" required>
-                    <button type="submit">OK</button>
-                </form>
-            </div>
-            
-            <div class="copyright">
-                &copy; {{ now.Year }} JDM Culture. Все права защищены.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Мобильное меню
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-        
-        // Закрытие меню при клике на ссылку
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-    </script>
+    {{ partial "footer.html" . }}
 </body>
 </html>

@@ -9,15 +9,13 @@ draft: false
 
 # Топ-5 легендарных JDM двигателей
 
-{{< social-share >}}
-
-![JDM Engines](best-jdm-engines.jpg "Легендарные JDM двигатели")
+![JDM Engines](/images/best-jdm-engines.jpg "Легендарные JDM двигатели")
 
 Японские инженеры создали некоторые из лучших двигателей в истории автопрома. Вот топ-5 легенд.
 
 ## 1. Toyota 2JZ-GTE
 
-![2JZ-GTE](best-jdm-engines.jpg "Toyota 2JZ-GTE двигатель")
+![2JZ-GTE](/images/best-jdm-engines.jpg "Toyota 2JZ-GTE двигатель")
 
 **Годы выпуска:** 1991-2002
 **Автомобили:** Supra MK4, Aristo, Soarer
@@ -43,7 +41,7 @@ draft: false
 
 ## 2. Nissan RB26DETT
 
-![RB26DETT](best-jdm-engines.jpg "Nissan RB26DETT двигатель Skyline GT-R")
+![RB26DETT](/images/best-jdm-engines.jpg "Nissan RB26DETT двигатель Skyline GT-R")
 
 **Годы выпуска:** 1989-2002
 **Автомобили:** Skyline GT-R (R32, R33, R34), Stagea
@@ -63,11 +61,9 @@ draft: false
 - Хрупкие керамические турбины
 - Недостаточная производительность топливной системы
 
-{{< social-share >}}
-
 ## 3. Honda K20/K24
 
-![K20](best-jdm-engines.jpg "Honda K20 Type R двигатель")
+![K20](/images/best-jdm-engines.jpg "Honda K20 Type R двигатель")
 
 **Годы выпуска:** 2001-настоящее время
 **Автомобили:** Civic Type R, Integra Type R, Accord, CR-Z
@@ -90,7 +86,7 @@ draft: false
 
 ## 4. Mazda 13B-REW
 
-![13B-REW](best-jdm-engines.jpg "Mazda 13B-REW роторный двигатель")
+![13B-REW](/images/best-jdm-engines.jpg "Mazda 13B-REW роторный двигатель")
 
 **Годы выпуска:** 1992-2002
 **Автомобили:** RX-7 FD
@@ -110,11 +106,9 @@ draft: false
 - Низкий ресурс апексов (50-100 тыс. км)
 - Проблемы с экологичностью
 
-{{< social-share >}}
-
 ## 5. Subaru EJ20/EJ25
 
-![EJ25](best-jdm-engines.jpg "Subaru EJ25 BOXER двигатель")
+![EJ25](/images/best-jdm-engines.jpg "Subaru EJ25 BOXER двигатель")
 
 **Годы выпуска:** 1989-2021
 **Автомобили:** Impreza WRX STI, Legacy, Forester
@@ -141,8 +135,6 @@ Driver Controlled Center Differential — система полного прив
 | K20/K24 | 2.0-2.4L | 200-320 л.с. | 500+ л.с. | ⭐⭐⭐⭐⭐ |
 | 13B-REW | 1.3L (x2) | 255-280 л.с. | 500+ л.с. | ⭐⭐⭐ |
 | EJ20/25 | 2.0-2.5L | 280-330 л.с. | 600+ л.с. | ⭐⭐⭐⭐ |
-
-{{< social-share >}}
 
 > «Эти двигатели доказали, что японская инженерная мысль может создавать шедевры.»
 

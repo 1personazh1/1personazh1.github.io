@@ -1,3 +1,16 @@
+{{/*
+  YouTube Embed Shortcode
+  Usage: {{< youtube VIDEO_ID >}}
+  Parameters:
+    0: YouTube video ID (required)
+    1: Video title for accessibility (optional)
+*/}}
 <div class="video-wrapper">
-    <iframe src="https://www.youtube.com/embed/{{ .Get 0 }}" frameborder="0" allowfullscreen></iframe>
+    <iframe 
+        src="https://www.youtube-nocookie.com/embed/{{ .Get 0 }}" 
+        {{ with .Get 1 }}title="{{ . }}"{{ else }}title="YouTube video"{{ end }}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+        loading="lazy"
+    ></iframe>
 </div>
