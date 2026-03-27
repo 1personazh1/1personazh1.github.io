@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="jdmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#jdmGrad)"/>
+  
+  <!-- Ретро полосы -->
+  <line x1="0" y1="0" x2="800" y2="450" stroke="#ff3333" stroke-width="2" opacity="0.3"/>
+  <line x1="100" y1="0" x2="900" y2="450" stroke="#ff3333" stroke-width="2" opacity="0.3"/>
+  <line x1="-100" y1="0" x2="700" y2="450" stroke="#ff3333" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Текст -->
+  <text x="400" y="200" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#ff3333" text-anchor="middle">JDM CULTURE</text>
+  <text x="400" y="250" font-family="Arial, sans-serif" font-size="24" fill="#f0f0f0" text-anchor="middle">Japanese Domestic Market</text>
+  
+  <!-- Декоративные элементы -->
+  <circle cx="400" cy="320" r="30" fill="none" stroke="#ff3333" stroke-width="3"/>
+  <circle cx="400" cy="320" r="20" fill="#ff3333" opacity="0.5"/>
+</svg>

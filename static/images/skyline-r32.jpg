@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#1a1a1a" />
+  <g transform="translate(400, 250)">
+    <path d="M -200 50 Q -100 -50 0 -30 Q 100 -50 200 50 L 180 80 L -180 80 Z" fill="#333" />
+    <rect x="-180" y="-10" width="360" height="40" fill="#222" />
+    <circle cx="-100" cy="60" r="25" fill="#111" stroke="#444" stroke-width="2" />
+    <circle cx="100" cy="60" r="25" fill="#111" stroke="#444" stroke-width="2" />
+    <rect x="-120" y="-40" width="40" height="20" fill="#ff3333" rx="3" />
+    <rect x="80" y="-40" width="40" height="20" fill="#ff3333" rx="3" />
+    <text x="0" y="-60" font-family="Arial, sans-serif" font-size="24" fill="#ddd" text-anchor="middle">Nissan Skyline R32</text>
+    <text x="0" y="120" font-family="Arial, sans-serif" font-size="16" fill="#aaa" text-anchor="middle">GT-R Silhouette</text>
+  </g>
+</svg>

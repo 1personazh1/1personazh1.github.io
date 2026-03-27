@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск | {{ .Site.Title }}</title>
+    <meta name="description" content="Поиск по статьям на сайте {{ .Site.Title }}">
+    
+    <!-- Open Graph / Social Media Tags -->
+    <meta property="og:title" content="Поиск | {{ .Site.Title }}">
+    <meta property="og:description" content="Поиск по статьям на сайте {{ .Site.Title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Поиск | {{ .Site.Title }}">
+    <meta name="twitter:description" content="Поиск по статьям на сайте {{ .Site.Title }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Styles -->
+    {{ $style := resources.Get "scss/main.scss" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">JDM CULTURE</a>
+            <ul class="nav-menu">
+                <li><a href="/">Главная</a></li>
+                <li><a href="/posts">Статьи</a></li>
+                <li><a href="/categories">Категории</a></li>
+                <li><a href="/tags">Теги</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Поиск по сайту</h1>
+        
+        <div class="search-container">
+            <form class="search-form" id="search-form">
+                <input type="text" id="search-input" placeholder="Введите ключевые слова для поиска..." autocomplete="off">
+                <button type="submit">Найти</button>
+            </form>
+        </div>
+        
+        <div class="search-results" id="search-results">
+            <!-- Результаты поиска будут отображаться здесь -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="social-icons">
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="YouTube">YT</a>
+                <a href="#" aria-label="TikTok">TT</a>
+            </div>
+            
+            <div class="subscription">
+                <h3>Подпишитесь на обновления</h3>
+                <form class="subscription-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <input type="email" name="email" placeholder="Ваш email" required>
+                    <button type="submit">OK</button>
+                </form>
+            </div>
+            
+            <div class="copyright">
+                &copy; {{ now.Year }} JDM Culture. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Мобильное меню
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Закрытие меню при клике на ссылку
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Простая реализация поиска
+        document.getElementById('search-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = document.getElementById('search-input').value.toLowerCase();
+            performSearch(query);
+        });
+        
+        async function performSearch(query) {
+            if (!query) {
+                document.getElementById('search-results').innerHTML = '<p>Введите поисковый запрос</p>';
+                return;
+            }
+            
+            try {
+                // Получаем JSON данные
+                const response = await fetch('/index.json');
+                const posts = await response.json();
+                
+                // Фильтруем посты
+                const results = posts.filter(post => 
+                    post.title.toLowerCase().includes(query) || 
+                    post.description.toLowerCase().includes(query) ||
+                    post.tags.some(tag => tag.toLowerCase().includes(query)) ||
+                    post.categories.some(cat => cat.toLowerCase().includes(query))
+                );
+                
+                displayResults(results, query);
+            } catch (error) {
+                console.error('Ошибка поиска:', error);
+                document.getElementById('search-results').innerHTML = '<p>Ошибка при выполнении поиска</p>';
+            }
+        }
+        
+        function displayResults(results, query) {
+            const container = document.getElementById('search-results');
+            
+            if (results.length === 0) {
+                container.innerHTML = `<p>По запросу "${query}" ничего не найдено</p>`;
+                return;
+            }
+            
+            let html = `<p>Найдено ${results.length} результатов по запросу "${query}":</p>`;
+            html += '<div class="posts-grid">';
+            
+            results.forEach(post => {
+                html += `
+                <div class="post-card">
+                    <a href="${post.url}">
+                        <div class="post-image" style="background-color: #333; display: flex; align-items: center; justify-content: center;">
+                            <span>Изображение</span>
+                        </div>
+                    </a>
+                    <div class="post-content">
+                        <h3 class="post-title"><a href="${post.url}">${post.title}</a></h3>
+                        <div class="post-meta">
+                            <span class="post-date">${post.date}</span>
+                        </div>
+                        <p class="post-excerpt">${post.description.substring(0, 120)}${post.description.length > 120 ? '...' : ''}</p>
+                        <div class="post-tags">
+                            ${post.tags.map(tag => `<a href="/tags/${encodeURIComponent(tag)}" class="tag">${tag}</a>`).join('')}
+                        </div>
+                    </div>
+                </div>`;
+            });
+            
+            html += '</div>';
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}
+{{- $limit := site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+{{- $pages = $pages | first $limit -}}
+{{- end -}}
+[
+{{- range $index, $page := $pages -}}
+{{- if gt $index 0 }},{{- end }}
+{
+  "title": "{{ .Title }}",
+  "date": "{{ .Date.Format "2006-01-02" }}",
+  "description": "{{ .Summary | plainify }}",
+  "url": "{{ .Permalink }}",
+  "tags": [{{ range $i, $tag := .Params.tags }}{{ if $i }}, {{ end }}"{{ $tag }}"{{ end }}],
+  "categories": [{{ range $i, $cat := .Params.categories }}{{ if $i }}, {{ end }}"{{ $cat }}"{{ end }}]
+}
+{{- end -}}
+]

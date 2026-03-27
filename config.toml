@@ -1,0 +1,43 @@
+baseURL = "https://1personazh1.github.io/jdm-blog"
+languageCode = "ru-ru"
+title = "JDM Culture"
+theme = "jdm-theme"
+
+[params]
+  author = "1personazh1"
+  description = "Блог о японской автомобильной культуре (JDM)"
+  jdm_accent = "#ff3333"
+  jdm_dark = "#1a1a1a"
+  jdm_light = "#f0f0f0"
+  jdm_retro = "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      emoji = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[outputFormats]
+  [outputFormats.RSS]
+    baseName = "index"
+    isPlainText = false
+    mediatype = "application/rss+xml"
+
+[privacy]
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
+
+[services]
+  [services.googleAnalytics]
+    id = "" # Добавьте ваш ID Google Analytics

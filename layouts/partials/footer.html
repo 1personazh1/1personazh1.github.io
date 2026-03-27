@@ -1,0 +1,61 @@
+<footer class="footer">
+    <div class="container footer-content">
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
+        </div>
+
+        <div class="subscription">
+            <h3>Подпишитесь на обновления</h3>
+            <form class="subscription-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="email" name="email" placeholder="Ваш email" required>
+                <button type="submit">OK</button>
+            </form>
+        </div>
+
+        <div class="copyright">
+            &copy; {{ now.Year }} JDM Culture. Все права защищены.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Мобильное меню
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Закрытие меню при клике на ссылку
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+
+    // Анимация при скролле
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+    });
+</script>
