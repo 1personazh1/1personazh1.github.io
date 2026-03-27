@@ -41,35 +41,40 @@ $jdm-gray-light: #2a2a3e;
   box-sizing: border-box;
 }
 
-// Custom Cursor
+// Custom Cursor — скрыт на тач-устройствах
 .custom-cursor {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  border: 2px solid $jdm-accent;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s, background-color 0.3s;
-  mix-blend-mode: difference;
+  display: none;
   
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 4px;
-    height: 4px;
-    background: $jdm-accent-secondary;
+  @media (pointer: fine) {
+    display: block;
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $jdm-accent;
     border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
     transform: translate(-50%, -50%);
-  }
-  
-  &:hover {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 51, 102, 0.1);
+    transition: width 0.3s, height 0.3s, background-color 0.3s;
+    mix-blend-mode: difference;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 4px;
+      height: 4px;
+      background: $jdm-accent-secondary;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    &:hover {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 51, 102, 0.1);
+    }
   }
 }
 
@@ -81,9 +86,10 @@ $jdm-gray-light: #2a2a3e;
   width: 0%;
   height: 3px;
   background: var(--gradient-main);
-  z-index: 10000;
+  z-index: 1001;
   transition: width 0.1s ease-out;
   box-shadow: 0 0 10px rgba(255, 51, 102, 0.5);
+  will-change: width;
 }
 
 // Основные стили
@@ -98,7 +104,10 @@ body {
   color: $jdm-light;
   line-height: 1.7;
   overflow-x: hidden;
-  cursor: none;
+  
+  @media (pointer: fine) {
+    cursor: none;
+  }
   
   &::before {
     content: '';
@@ -112,11 +121,11 @@ body {
         0deg,
         transparent,
         transparent 2px,
-        rgba(0, 240, 255, 0.02) 2px,
-        rgba(0, 240, 255, 0.02) 4px
+        rgba(0, 240, 255, 0.015) 2px,
+        rgba(0, 240, 255, 0.015) 4px
       );
     pointer-events: none;
-    z-index: 9998;
+    z-index: -1;
   }
 }
 
@@ -131,12 +140,12 @@ body::after {
   background: linear-gradient(
     to bottom,
     transparent 50%,
-    rgba(0, 0, 0, 0.1) 51%
+    rgba(0, 0, 0, 0.05) 51%
   );
   background-size: 100% 4px;
   pointer-events: none;
-  z-index: 9997;
-  opacity: 0.3;
+  z-index: -1;
+  opacity: 0.2;
 }
 
 // Заголовки
@@ -246,9 +255,18 @@ h3 {
         flex-direction: column;
         background: rgba(10, 10, 15, 0.98);
         width: 100%;
-        padding: 2rem 0;
+        padding: 1.5rem 0;
         transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         border-bottom: 1px solid rgba(255, 51, 102, 0.3);
+        z-index: 999;
+        
+        li a {
+          padding: 0.75rem 2rem;
+          display: block;
+          min-height: 44px;
+          display: flex;
+          align-items: center;
+        }
       }
       
       &.active {
@@ -504,8 +522,8 @@ h3 {
   .scroll-indicator {
     position: absolute;
     bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -526,6 +544,7 @@ h3 {
       border: 2px solid var(--text-secondary);
       border-radius: 15px;
       position: relative;
+      overflow: hidden;
       
       &::before {
         content: '';
@@ -971,6 +990,7 @@ h3 {
   .post-tags {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 0.75rem;
     margin: 3rem 0;
     padding-top: 2rem;
@@ -992,6 +1012,56 @@ h3 {
         background: rgba(0, 240, 255, 0.2);
         box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
         transform: translateY(-2px);
+      }
+    }
+
+    .tags-more {
+      position: relative;
+      display: inline-flex;
+
+      .tags-more-btn {
+        background: rgba(255, 51, 102, 0.15);
+        color: $jdm-accent;
+        border: 1px solid rgba(255, 51, 102, 0.3);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: var(--transition-smooth);
+        white-space: nowrap;
+
+        &:hover {
+          background: rgba(255, 51, 102, 0.3);
+          border-color: $jdm-accent;
+        }
+
+        &[aria-expanded="true"] {
+          background: $jdm-accent;
+          color: $jdm-light;
+          border-color: $jdm-accent;
+        }
+      }
+
+      .tags-more-dropdown {
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        background: rgba(10, 10, 15, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 240, 255, 0.2);
+        border-radius: 12px;
+        padding: 1rem;
+        min-width: 200px;
+        z-index: 100;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+        &[hidden] {
+          display: none;
+        }
       }
     }
   }
@@ -1281,21 +1351,21 @@ h3 {
 
 @keyframes bounce {
   0%, 100% {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
   50% {
-    transform: translateX(-50%) translateY(10px);
+    transform: translateY(10px);
   }
 }
 
 @keyframes scroll {
   0% {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
   100% {
     opacity: 0;
-    transform: translateX(-50%) translateY(15px);
+    transform: translateY(12px);
   }
 }
 
@@ -1333,17 +1403,366 @@ h3 {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+
   .posts-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
   
   .hero {
     min-height: auto;
-    padding: 120px 0 60px;
+    padding: 100px 0 50px;
+    
+    // Отключаем тяжёлые GPU-эффекты на мобильных
+    &::before {
+      animation: none;
+    }
+    
+    &::after {
+      display: none;
+    }
+    
+    .hero-content {
+      padding: 1rem;
+    }
+  }
+  
+  .posts-section {
+    padding: 3rem 0;
+    
+    .section-header {
+      margin-bottom: 2rem;
+    }
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
   }
   
   .post-navigation {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .post-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .social-share {
+    gap: 0.75rem;
+    
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      font-size: 0.8rem;
+    }
+  }
+
+  .footer {
+    padding: 3rem 0 1.5rem;
+    margin-top: 3rem;
+
+    .social-icons {
+      gap: 1rem;
+      
+      a {
+        width: 44px;
+        height: 44px;
+      }
+    }
+  }
+
+  .terms-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .term-card {
+    padding: 1rem;
+    
+    .term-name {
+      font-size: 0.85rem;
+    }
+  }
+
+  .video-wrapper {
+    margin: 1.5rem 0;
+    border-radius: 12px;
+  }
+
+  .post-tags {
+    .tags-more .tags-more-dropdown {
+      right: 0;
+      left: auto;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    font-size: clamp(1.1rem, 5vw, 1.5rem);
+  }
+
+  h3 {
+    font-size: clamp(1rem, 4vw, 1.3rem);
+  }
+
+  .hero {
+    padding: 90px 0 40px;
+
+    .hero-badge {
+      font-size: 0.7rem;
+      padding: 0.4rem 1rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+      align-items: center;
+      
+      .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 0.9rem 1.5rem;
+        font-size: 0.8rem;
+        text-align: center;
+      }
+    }
+
+    .scroll-indicator {
+      display: none;
+    }
+  }
+
+  .posts-section {
+    padding: 2rem 0;
+  }
+
+  .post-card {
+    border-radius: 12px;
+
+    .post-content {
+      padding: 1rem;
+
+      .post-title {
+        font-size: 1.1rem;
+      }
+
+      .post-excerpt {
+        font-size: 0.9rem;
+      }
+
+      .post-tags .tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+      }
+    }
+  }
+
+  .post {
+    padding: 1rem 0;
+
+    .post-header {
+      .post-title {
+        font-size: clamp(1.4rem, 5vw, 2rem);
+        line-height: 1.3;
+      }
+
+      .post-meta {
+        font-size: 0.8rem;
+        gap: 1rem;
+      }
+
+      .post-image {
+        border-radius: 12px;
+        margin-top: 1.5rem;
+      }
+    }
+
+    .TableOfContents {
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      
+      ul li a {
+        font-size: 0.9rem;
+      }
+    }
+
+    .post-content {
+      font-size: 1rem;
+      line-height: 1.8;
+
+      img {
+        border-radius: 8px;
+        margin: 1.5rem 0;
+      }
+
+      blockquote {
+        padding: 1rem 1.25rem;
+        margin: 1.5rem 0;
+        border-radius: 0 8px 8px 0;
+      }
+
+      table {
+        font-size: 0.85rem;
+
+        th, td {
+          padding: 0.75rem 0.5rem;
+        }
+      }
+
+      pre {
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+      }
+    }
+
+    .post-tags {
+      gap: 0.5rem;
+      margin: 2rem 0;
+      padding-top: 1.5rem;
+
+      .tag {
+        padding: 0.4rem 1rem;
+        font-size: 0.75rem;
+      }
+
+      .tags-more .tags-more-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+  .social-share {
+    gap: 0.5rem;
+    
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 0.75rem;
+    }
+  }
+
+  .post-navigation {
+    .nav-previous, .nav-next {
+      a {
+        padding: 1rem;
+        
+        span {
+          font-size: 0.7rem;
+        }
+        
+        .nav-title {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+
+  .related-posts {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .footer {
+    padding: 2rem 0 1rem;
+    margin-top: 2rem;
+
+    .social-icons {
+      gap: 0.75rem;
+      
+      a {
+        width: 40px;
+        height: 40px;
+        font-size: 0.75rem;
+      }
+    }
+
+    .subscription {
+      h3 {
+        font-size: 1.1rem;
+      }
+
+      .subscription-form {
+        flex-direction: column;
+        gap: 0.75rem;
+
+        input[type="email"] {
+          padding: 0.85rem 1rem;
+        }
+
+        button {
+          padding: 0.85rem 1.5rem;
+        }
+      }
+    }
+  }
+
+  .terms-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .taxonomy-header {
+    margin-bottom: 2rem;
+
+    .taxonomy-badge {
+      font-size: 0.75rem;
+      padding: 0.4rem 1rem;
+    }
+  }
+
+  .video-wrapper {
+    margin: 1rem 0;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero {
+    padding: 80px 0 30px;
+  }
+
+  .post-card .post-content {
+    padding: 0.75rem;
+  }
+
+  .post .post-content {
+    font-size: 0.95rem;
   }
 }
 

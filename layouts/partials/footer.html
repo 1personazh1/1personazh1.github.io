@@ -41,4 +41,31 @@
     document.querySelectorAll('.fade-in').forEach(el => {
         observer.observe(el);
     });
+
+    // Tags dropdown toggle
+    document.querySelectorAll('.tags-more-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            const dropdown = btn.nextElementSibling;
+            btn.setAttribute('aria-expanded', !expanded);
+            dropdown.hidden = expanded;
+            btn.textContent = expanded ? btn.dataset.originalText : 'Скрыть';
+        });
+        btn.dataset.originalText = btn.textContent;
+    });
+
+    // Close dropdown on outside click
+    document.addEventListener('click', (e) => {
+        document.querySelectorAll('.tags-more').forEach(group => {
+            if (!group.contains(e.target)) {
+                const btn = group.querySelector('.tags-more-btn');
+                const dropdown = group.querySelector('.tags-more-dropdown');
+                if (btn && dropdown) {
+                    btn.setAttribute('aria-expanded', 'false');
+                    dropdown.hidden = true;
+                    btn.textContent = btn.dataset.originalText;
+                }
+            }
+        });
+    });
 </script>

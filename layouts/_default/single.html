@@ -36,11 +36,28 @@
                 {{ .Content }}
             </div>
 
-            <div class="post-tags fade-in">
-                {{ range .Params.tags }}
-                <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="tag">#{{ . }}</a>
+            {{ if .Params.tags }}
+            <div class="post-tags fade-in" role="list" aria-label="Теги статьи">
+                {{ $tags := .Params.tags }}
+                {{ $visible := first 5 $tags }}
+                {{ $hidden := after 5 $tags }}
+                {{ range $visible }}
+                <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="tag" role="listitem">#{{ . }}</a>
+                {{ end }}
+                {{ if $hidden }}
+                <div class="tags-more" role="group" aria-label="Показать остальные теги">
+                    <button class="tags-more-btn" aria-expanded="false" aria-controls="hidden-tags" type="button">
+                        +{{ len $hidden }} ещё
+                    </button>
+                    <div class="tags-more-dropdown" id="hidden-tags" hidden>
+                        {{ range $hidden }}
+                        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="tag" role="listitem">#{{ . }}</a>
+                        {{ end }}
+                    </div>
+                </div>
                 {{ end }}
             </div>
+            {{ end }}
 
             <div class="social-share fade-in">
                 <a href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}" class="social-btn" target="_blank" rel="noopener" aria-label="Twitter">𝕏</a>
