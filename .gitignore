@@ -26,3 +26,7 @@ logs/
 # Temporary files
 tmp/
 temp/
+
+# AI Assistant documentation (local only)
+.agent/
+.kilo/
