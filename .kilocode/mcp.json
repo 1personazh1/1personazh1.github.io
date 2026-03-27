@@ -1,1 +1,39 @@
-{"mcpServers":{"git-mcp":{"type":"streamable-http","url":"https://gitmcp.io/1personazh1/1personazh1.github.io"},"shadcn/ui":{"command":"npx","args":["shadcn@latest","mcp"]},"context7":{"command":"npx","args":["-y","@upstash/context7-mcp"],"env":{"DEFAULT_MINIMUM_TOKENS":""}},"playwright":{"command":"npx","args":["-y","@playwright/mcp@0.0.38"]},"ddg-search":{"command":"uvx","args":["duckduckgo-mcp-server"],"disabled":false,"alwaysAllow":[]}}}
+{
+    "mcpServers": {
+        "git-mcp": {
+            "type": "streamable-http",
+            "url": "https://gitmcp.io/1personazh1/1personazh1.github.io"
+        },
+        "shadcn/ui": {
+            "command": "npx",
+            "args": [
+                "shadcn@latest",
+                "mcp"
+            ]
+        },
+        "context7": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@upstash/context7-mcp"
+            ],
+            "env": {
+                "DEFAULT_MINIMUM_TOKENS": ""
+            }
+        },
+        "playwright": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@playwright/mcp@0.0.38"
+            ]
+        },
+        "duckduckgo-search": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "duckduckgo-mpc-server"
+            ]
+        }
+    }
+}

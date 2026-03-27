@@ -11,7 +11,7 @@ draft: false
 
 {{< social-share >}}
 
-![JDM Culture](jdm-history.jpg "Японская автомобильная культура")
+![JDM Culture](jdm-history.svg "Японская автомобильная культура")
 
 JDM (Japanese Domestic Market) — это не просто аббревиатура, это целая **культура**, которая захватила мир.
 

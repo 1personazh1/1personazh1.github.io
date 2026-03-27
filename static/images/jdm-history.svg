@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="jdmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2a1a3e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#jdmGrad)"/>
+  
+  <!-- Силуэты JDM автомобилей -->
+  <g opacity="0.6">
+    <path d="M 100 450 L 150 420 L 250 400 L 350 390 L 450 400 L 500 430 L 500 480 L 450 480 L 430 450 L 400 450 L 380 480 L 300 480 L 280 450 L 200 450 L 180 480 L 100 480 Z" fill="#ff3366"/>
+    <path d="M 550 450 L 600 420 L 700 400 L 800 390 L 900 400 L 950 430 L 950 480 L 900 480 L 880 450 L 850 450 L 830 480 L 750 480 L 730 450 L 650 450 L 630 480 L 550 480 Z" fill="#00f0ff"/>
+    <path d="M 1000 450 L 1050 420 L 1150 400 L 1200 410 L 1200 480 L 1150 480 L 1130 450 L 1100 450 L 1080 480 L 1000 480 Z" fill="#7b2cbf"/>
+  </g>
+  
+  <!-- Tokyo skyline -->
+  <rect x="100" y="250" width="80" height="200" fill="#0a0a0f" opacity="0.8"/>
+  <rect x="200" y="200" width="100" height="250" fill="#0a0a0f" opacity="0.8"/>
+  <rect x="320" y="280" width="60" height="170" fill="#0a0a0f" opacity="0.8"/>
+  <rect x="400" y="180" width="120" height="270" fill="#0a0a0f" opacity="0.8"/>
+  <rect x="540" y="230" width="80" height="220" fill="#0a0a0f" opacity="0.8"/>
+  <rect x="640" y="200" width="100" height="250" fill="#0a0a0f" opacity="0.8"/>
+  <rect x="760" y="260" width="70" height="190" fill="#0a0a0f" opacity="0.8"/>
+  <rect x="850" y="220" width="90" height="230" fill="#0a0a0f" opacity="0.8"/>
+  <rect x="960" y="190" width="110" height="260" fill="#0a0a0f" opacity="0.8"/>
+  <rect x="1090" y="240" width="80" height="210" fill="#0a0a0f" opacity="0.8"/>
+  
+  <!-- Neon окна -->
+  <g fill="#ff3366" opacity="0.6">
+    <rect x="220" y="220" width="10" height="10"/>
+    <rect x="250" y="220" width="10" height="10"/>
+    <rect x="220" y="250" width="10" height="10"/>
+    <rect x="420" y="200" width="10" height="10"/>
+    <rect x="450" y="200" width="10" height="10"/>
+    <rect x="480" y="200" width="10" height="10"/>
+    <rect x="660" y="220" width="10" height="10"/>
+    <rect x="690" y="220" width="10" height="10"/>
+    <rect x="980" y="210" width="10" height="10"/>
+    <rect x="1010" y="210" width="10" height="10"/>
+  </g>
+  
+  <!-- Текст -->
+  <text x="600" y="130" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="#ff3366" text-anchor="middle">JDM CULTURE</text>
+  <text x="600" y="170" font-family="Arial, sans-serif" font-size="24" fill="#f0f0f0" text-anchor="middle">1990s GOLDEN ERA</text>
+  
+  <!-- Декоративные элементы -->
+  <line x1="200" y1="600" x2="1000" y2="600" stroke="#ff3366" stroke-width="2" opacity="0.5"/>
+  <text x="600" y="630" font-family="Arial, sans-serif" font-size="14" fill="#888" text-anchor="middle">JDM CULTURE BLOG</text>
+</svg>
