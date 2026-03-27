@@ -11,8 +11,7 @@ draft: false
 
 {{< social-share >}}
 
-
-![JDM Tuning](placeholder.svg "Тюнинг JDM автомобилей")
+![JDM Tuning](tuning-basics.jpg "Тюнинг JDM автомобилей")
 
 Тюнинг JDM автомобилей — это искусство баланса между мощностью, надежностью и стилем.
 
@@ -38,7 +37,7 @@ draft: false
 - **Cat-back exhaust** — выхлопная система после катализатора
 - **Header/Exhaust manifold** — выпускной коллектор
 
-{{< youtube d1Xz-8vYzWk >}}
+{{< youtube 1j9HRxPNYMM >}}
 
 #### Интеркулер
 Увеличенный интеркулер охлаждает наддувочный воздух:

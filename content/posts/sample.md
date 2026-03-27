@@ -8,7 +8,7 @@ image: "skyline-r32.jpg"
 
 # История Nissan Skyline GT-R: Богиня гоночных трасс
 
-![Nissan Skyline GT-R R32](placeholder.svg "Легендарный R32 GT-R")
+![Nissan Skyline GT-R R32](skyline-r32.jpg "Легендарный R32 GT-R")
 
 Nissan Skyline GT-R — это автомобиль, который заработал прозвище **«Godzilla»** за свое доминирование в автоспорте. История этой легенды началась в 1969 году и продолжается по сей день.
 
@@ -16,7 +16,7 @@ Nissan Skyline GT-R — это автомобиль, который зарабо
 
 Первый Skyline GT-R появился в 1969 году с двигателем **S20** — рядной шестеркой объемом 2.0 литра, выдававшей 160 л.с.
 
-{{< youtube ZpWdT8gCz9I >}}
+{{< youtube 3JRDl7e4f7A >}}
 
 ### Достижения первого GT-R:
 

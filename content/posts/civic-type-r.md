@@ -8,7 +8,7 @@ image: "civic-type-r.jpg"
 
 # Honda Civic Type R: Король переднеприводных хот-хэтчей
 
-![Honda Civic Type R](placeholder.svg "Honda Civic Type R")
+![Honda Civic Type R](civic-type-r.jpg "Honda Civic Type R")
 
 Honda Civic Type R — это воплощение философии **Type R**: максимальная производительность при минимальном весе. Никакого полного привода, никаких турбин (до 2015 года), только чистая мощность и VTEC.
 
@@ -16,7 +16,7 @@ Honda Civic Type R — это воплощение философии **Type R**
 
 Сердце любого Civic Type R — это высокооборотистый атмосферный двигатель с системой изменения фаз газораспределения **VTEC**.
 
-{{< youtube s2qHW7qJw8E >}}
+{{< youtube _-GP-V8RXZs >}}
 
 ### Характеристики двигателей разных поколений:
 

@@ -11,18 +11,17 @@ draft: false
 
 {{< social-share >}}
 
-
-![JDM Engines](placeholder.svg "Легендарные JDM двигатели")
+![JDM Engines](best-jdm-engines.jpg "Легендарные JDM двигатели")
 
 Японские инженеры создали некоторые из лучших двигателей в истории автопрома. Вот топ-5 легенд.
 
 ## 1. Toyota 2JZ-GTE
 
-![2JZ-GTE](placeholder.svg "Toyota 2JZ-GTE")
+![2JZ-GTE](supra-mk4.jpg "Toyota 2JZ-GTE двигатель")
 
-**Годы выпуска:** 1991-2002  
-**Автомобили:** Supra MK4, Aristo, Soarer  
-**Объем:** 3.0L (2997 см³)  
+**Годы выпуска:** 1991-2002
+**Автомобили:** Supra MK4, Aristo, Soarer
+**Объем:** 3.0L (2997 см³)
 **Мощность:** 280-330 л.с. (сток), 1000+ л.с. (тюнинг)
 
 ### Почему легенда?
@@ -40,15 +39,15 @@ draft: false
 | Single turbo kit | 500-700 л.с. | $3000-5000 |
 | Built motor + big turbo | 800-1000+ л.с. | $10000+ |
 
-{{< youtube d1Xz-8vYzWk >}}
+{{< youtube 1j9HRxPNYMM >}}
 
 ## 2. Nissan RB26DETT
 
-![RB26DETT](placeholder.svg "Nissan RB26DETT")
+![RB26DETT](skyline-r32.jpg "Nissan RB26DETT двигатель Skyline GT-R")
 
-**Годы выпуска:** 1989-2002  
-**Автомобили:** Skyline GT-R (R32, R33, R34), Stagea  
-**Объем:** 2.6L (2568 см³)  
+**Годы выпуска:** 1989-2002
+**Автомобили:** Skyline GT-R (R32, R33, R34), Stagea
+**Объем:** 2.6L (2568 см³)
 **Мощность:** 280 л.с. (сток), 800+ л.с. (тюнинг)
 
 ### Особенности
@@ -68,11 +67,11 @@ draft: false
 
 ## 3. Honda K20/K24
 
-![K20](placeholder.svg "Honda K20 Type R")
+![K20](civic-type-r.jpg "Honda K20 Type R двигатель")
 
-**Годы выпуска:** 2001-настоящее время  
-**Автомобили:** Civic Type R, Integra Type R, Accord, CR-Z  
-**Объем:** 2.0L (K20), 2.4L (K24)  
+**Годы выпуска:** 2001-настоящее время
+**Автомобили:** Civic Type R, Integra Type R, Accord, CR-Z
+**Объем:** 2.0L (K20), 2.4L (K24)
 **Мощность:** 200-320 л.с.
 
 ### VTEC
@@ -91,11 +90,11 @@ draft: false
 
 ## 4. Mazda 13B-REW
 
-![13B-REW](placeholder.svg "Mazda 13B-REW роторный двигатель")
+![13B-REW](rx7-fd.jpg "Mazda 13B-REW роторный двигатель")
 
-**Годы выпуска:** 1992-2002  
-**Автомобили:** RX-7 FD  
-**Тип:** Роторный (Ванкель)  
+**Годы выпуска:** 1992-2002
+**Автомобили:** RX-7 FD
+**Тип:** Роторный (Ванкель)
 **Мощность:** 255-280 л.с.
 
 ### Уникальная конструкция
@@ -115,11 +114,11 @@ draft: false
 
 ## 5. Subaru EJ20/EJ25
 
-![EJ25](placeholder.svg "Subaru EJ25 BOXER")
+![EJ25](drift-culture.jpg "Subaru EJ25 BOXER двигатель")
 
-**Годы выпуска:** 1989-2021  
-**Автомобили:** Impreza WRX STI, Legacy, Forester  
-**Объем:** 2.0L (EJ20), 2.5L (EJ25)  
+**Годы выпуска:** 1989-2021
+**Автомобили:** Impreza WRX STI, Legacy, Forester
+**Объем:** 2.0L (EJ20), 2.5L (EJ25)
 **Мощность:** 280-330 л.с.
 
 ### BOXER
