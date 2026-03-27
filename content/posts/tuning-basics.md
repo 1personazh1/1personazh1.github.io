@@ -11,7 +11,7 @@ draft: false
 
 {{< social-share >}}
 
-![JDM Tuning](tuning-basics.svg "Тюнинг JDM автомобилей")
+![JDM Tuning](tuning-basics.jpg "Тюнинг JDM автомобилей")
 
 Тюнинг JDM автомобилей — это искусство баланса между мощностью, надежностью и стилем.
 

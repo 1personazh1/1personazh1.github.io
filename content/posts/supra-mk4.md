@@ -8,7 +8,7 @@ image: "supra-mk4.jpg"
 
 # Легенда о Toyota Supra MK4
 
-![Toyota Supra MK4](supra-mk4.svg "Toyota Supra четвертого поколения")
+![Toyota Supra MK4](supra-mk4.jpg "Toyota Supra четвертого поколения")
 
 Toyota Supra четвертого поколения (A80) — это не просто автомобиль, это **икона** автомобильного мира, символ эпохи 90-х и один из самых узнаваемых спортивных автомобилей всех времен.
 

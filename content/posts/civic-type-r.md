@@ -8,7 +8,7 @@ image: "civic-type-r.jpg"
 
 # Honda Civic Type R: Король переднеприводных хот-хэтчей
 
-![Honda Civic Type R](civic-type-r.svg "Honda Civic Type R")
+![Honda Civic Type R](civic-type-r.jpg "Honda Civic Type R")
 
 Honda Civic Type R — это воплощение философии **Type R**: максимальная производительность при минимальном весе. Никакого полного привода, никаких турбин (до 2015 года), только чистая мощность и VTEC.
 
