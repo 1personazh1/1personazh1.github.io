@@ -4,42 +4,25 @@
             <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
             <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
             <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
+            <a href="https://t.me" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
         </div>
 
         <div class="subscription">
-            <h3>Подпишитесь на обновления</h3>
+            <h3>⚡ Подпишитесь на обновления</h3>
+            <p>Получайте уведомления о новых статьях о JDM культуре</p>
             <form class="subscription-form" action="https://formspree.io/f/xojpvnnk" method="POST">
                 <input type="email" name="email" placeholder="Ваш email" required>
-                <button type="submit">OK</button>
+                <button type="submit">Подписаться</button>
             </form>
         </div>
 
         <div class="copyright">
-            &copy; {{ now.Year }} JDM Culture. Все права защищены.
+            &copy; {{ now.Year }} JDM Culture. Made with <span style="color: #ff3366;">❤</span> for JDM enthusiasts.
         </div>
     </div>
 </footer>
 
 <script>
-    // Мобильное меню
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Закрытие меню при клике на ссылку
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-    }
-
     // Анимация при скролле
     const observerOptions = {
         root: null,
